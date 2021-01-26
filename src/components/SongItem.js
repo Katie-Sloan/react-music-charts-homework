@@ -1,14 +1,20 @@
 import React from "react";
 
-const SongItem = ({song}) => {
+const SongItem = ({song, ChartPosition}) => {
 
     // if(!loaded){
     //     return <p>Loading...</p>
     // }
 
     return(
-        song["im:name"]["label"]
-        // songs["feed"]["entry"].indexOf(song)["im:name"]
+        <>
+            ChartPosition: {ChartPosition}
+            Title: {song["title"]["label"]}
+            Artist: {song["im:artist"]["label"]}
+            {/* {song["category"]["attributes"]["im:id"]} */}
+            {/* {song["im:name"]["label"]} */}
+        </>
+        
     )
 }
 

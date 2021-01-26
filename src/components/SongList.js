@@ -11,9 +11,11 @@ const SongList = ({songs, loaded}) => {
     const getIndexPosition = (song) => songs["feed"]["entry"].indexOf(song);
 
     const SongItems = songs["feed"]["entry"].map((song) => { 
+        const ChartPosition = getIndexPosition(song) + 1;
         return (
             <SongItem song={song} 
             key={getIndexPosition(song)}
+            ChartPosition={ChartPosition}
             />
         )
     })   
