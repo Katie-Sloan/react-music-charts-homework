@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from "react";
 import SongList from "../components/SongList";
-import SongItem from "../components/SongItem";
+import "./SongContainer.css"
 
 const SongContainer = () => {
 
@@ -12,17 +12,15 @@ const SongContainer = () => {
     }, [])
 
     const getSongs = () => {
-        console.log("getting songs");
         fetch(`https://itunes.apple.com/gb/rss/topsongs/limit=20/json`)
         .then(res => res.json())
         .then(data => setSongs(data))
         .then(() => setLoaded(true))
     }
-    
-    
+      
     return(
         <>
-            <h1>Top 20 Charts</h1>
+            <h1 id="heading">UK Top 20 Song Chart</h1>
             <SongList 
                 songs={songs} 
                 loaded={loaded}

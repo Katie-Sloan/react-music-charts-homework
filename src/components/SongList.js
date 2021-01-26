@@ -3,7 +3,6 @@ import SongItem from "./SongItem";
 
 const SongList = ({songs, loaded}) => {
     
-    
     if(!loaded){
         return <p>Loading...</p>
     }
@@ -24,8 +23,6 @@ const SongList = ({songs, loaded}) => {
         <>
             <ul>
                 {SongItems}
-                {/* song={song}
-                loaded={loaded} */}
             </ul>
         </>
     )
