@@ -8,18 +8,22 @@ const SongList = ({songs, loaded}) => {
         return <p>Loading...</p>
     }
 
-    const SongItems = songs["feed"]["entry"].map((song) => {
+    const getIndexPosition = (song) => songs["feed"]["entry"].indexOf(song);
+
+    const SongItems = songs["feed"]["entry"].map((song) => { 
         return (
             <SongItem song={song} 
-            // key={song["feed"]["entry]["id"]["attributes"]["im:id"]}
+            key={getIndexPosition(song)}
             />
         )
-    })
+    })   
 
     return(
         <>
             <ul>
                 {SongItems}
+                {/* song={song}
+                loaded={loaded} */}
             </ul>
         </>
     )
