@@ -1,8 +1,27 @@
 import React from "react";
+import SongItem from "./SongItem";
 
-const SongList = () => {
+const SongList = ({songs, loaded}) => {
+    
+    
+    if(!loaded){
+        return <p>Loading...</p>
+    }
+
+    const SongItems = songs["feed"]["entry"].map((song) => {
+        return (
+            <SongItem song={song} 
+            // key={song["feed"]["entry]["id"]["attributes"]["im:id"]}
+            />
+        )
+    })
+
     return(
-        null
+        <>
+            <ul>
+                {SongItems}
+            </ul>
+        </>
     )
 }
 
